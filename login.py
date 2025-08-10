@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import hashlib
+# import hashlib
 import os
 
 def first_page():
@@ -13,7 +13,8 @@ def first_page():
         return pd.read_csv(users_file)
 
     def hash_password(password):
-        return hashlib.sha256(password.encode()).hexdigest()
+        # return hashlib.sha256(password.encode()).hexdigest()
+        return password
 
     if not os.path.exists(users_file):
         pd.DataFrame({"username": ["test"],
